@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Ball15124/git-test#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap-social": "^5.1.1"
   }
 }
