@@ -27,26 +27,36 @@
                   </div>
                   <img class ="w-25" src = "photo.png" alt ="">
                   <div class = "d-flex justify-content-lg-around">
-                    <h3><b>1324 5678 1234 5678</b></h3>
+                    <h3 id = "CardNum"><b>1324 5678 1234 5678</b></h3>
                   </div>
-                  <h3 style="text-align: center;"><b>00/00</b></h3>
-                  <h4>NAWAT SUJJARITRAT</h4>
+                  <h3 style="text-align: center;" id = "ExpireDate"><b>00/00</b></h3>
+                  <h4 id = "CardName">NAWAT SUJJARITRAT</h4>
               </div>
-              <form>
-                <input type="text" class = "form-control" placeholder="CARD NUMBER" maxlength="16">
+              <form method="get">
+                <input type="text" name = "CardNum"class = "form-control" placeholder="CARD NUMBER" maxlength="16">
                 <br>
-                <input type="text" class = "form-control" placeholder="FULL NAME">
+                <input type="text" name = "FullName"class = "form-control" placeholder="FULL NAME">
                 <br>
                 <div class = "row">
-                    <div class ="col-6"><input type="text" class = "form-control" placeholder="MM/YY" maxlength="5"></div>
-                    <div class ="col-6"><input type="text" class = "form-control" placeholder="CVC" maxlength="3"></div>
+                    <div class ="col-6"><input type="text" name = "ExpireDate"class = "form-control" placeholder="MM/YY" maxlength="5"></div>
+                    <div class ="col-6"><input type="text" name = "CVC"class = "form-control" placeholder="CVC" maxlength="3"></div>
                 </div>
                 <br>
-                <button type ="button" class ="btn btn-success w-100">Set Credit Card</button>
+                <input type ="submit" class ="btn btn-success w-100">Set Credit Card</button>
               </form>
             </div>
           </div>
         </div>
+        <script>
+            const nameElement = document.getElementById('CardName');
+            const cardNumberElement = document.getElementById('CardNum');
+            const expiredateElement = document.getElementById('ExpireDate');
+
+            const params = new URLSearchParams(location.search);
+            nameElement.innerHTML = params.get('FullName');
+            cardNumberElement.innerHTML = params.get('CardNum');
+            expiredateElement.innerHTML = params.get('ExpireDate');
+        </script>
   </body>
 </html>
 
